@@ -1,0 +1,4 @@
+c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\bin\SiteAutonove.dll
+c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\bin\SiteAutonove.pdb
+c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\obj\Debug\SiteAutonove.dll
+c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\obj\Debug\SiteAutonove.pdb

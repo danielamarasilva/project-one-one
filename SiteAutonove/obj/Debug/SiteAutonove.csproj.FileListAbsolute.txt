@@ -2,3 +2,9 @@ c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\
 c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\bin\SiteAutonove.pdb
 c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\obj\Debug\SiteAutonove.dll
 c:\users\hudson\documents\visual studio 2010\Projects\SiteAutonove\SiteAutonove\obj\Debug\SiteAutonove.pdb
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\bin\SiteAutonove.dll.config
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\bin\SiteAutonove.dll
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\bin\SiteAutonove.pdb
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.csprojResolveAssemblyReference.cache
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.dll
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.pdb

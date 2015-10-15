@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html class="no-js">
 
 <head>
@@ -112,28 +112,311 @@
                             <form method="post" id="contactform" name="contactform" class="contact-form clearfix" action="mail/contact.php">
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <div>
-    <h4>Descrição do bem</h4></div>
+                                        <h4>Descrição do bem</h4><hr />
                                         <div class="form-group">
-                                            <input type="text" id="fname" name="First Name" class="form-control input-lg" placeholder="Primeiro Nome*">
+                                            <input type="text" id="veiculo" name="veiculo" class="form-control input-lg" placeholder="Veículo*" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" id="lname" name="Last Name" class="form-control input-lg" placeholder="Último Nome">
+                                            <input type="text" id="anoModelo" name="anoModelo" class="form-control input-lg" placeholder="Ano/Modelo" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" id="email" name="email" class="form-control input-lg" placeholder="Email*">
+                                            <input type="text" id="valorEntrada" name="valorEntrada" class="form-control input-lg" placeholder="Valor Entrada*" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Telefone">
+                                            <input type="text" id="valorFinanciado" name="valorFinanciado" class="form-control input-lg" placeholder="Valor Financiado" required>
                                         </div>
-                                    </div>
-                                    <!--<div class="col-md-7">
-    <div class="form-group">
-        <textarea cols="6" rows="8" id="comments" name="comments" class="form-control input-lg" placeholder="Mensagem"></textarea>
-    </div>
-    <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar">
-</div>-->
+                                        <div class="form-group">
+                                            <select id="numParcelas" name="numParcelas" class="form-control input-lg">
+                                                <option value="6 meses">6  meses</option>
+                                                <option value="12 meses">12 meses</option>
+                                                <option value="18 meses">18 meses</option>
+                                                <option value="24 meses">24 meses</option>
+                                                <option value="30 meses">30 meses</option>
+                                                <option value="36 meses">36 meses</option>
+                                                <option value="48 meses">48 meses</option>
+                                                <option value="60 meses">60 meses</option>
+                                                <option value="72 meses">72 meses</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="vencParcela" name="vencParcela" class="form-control input-lg" placeholder="Venc Parcela" required />
+                                        </div>
+                                        <h4>Dados Pessoais</h4><hr />
+                                        <div class="form-group">
+                                            <input type="text" id="nome" name="nome" placeholder="Nome" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cpf" name="cpf" placeholder="CPF" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="telefone" name="telefone" placeholder="Telefone" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="celular" name="celular" placeholder="Celular" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="email" name="email" placeholder="Email" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="tipoDoc" name="TipoDoc" class="form-control input-lg">
+                                                <option value="rg">RG</option>
+                                                <option value="rne">RNE</option>
+                                                <option value="cnh">CNH</option>
+                                                <option value="ric">RIC</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="numDoc" name="numDoc" placeholder="Número Documento" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="emissaoDoc" name="emissaoDoc" placeholder="Emissão Documento" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="orgaoExpedidor" name="orgaoExpedidor" placeholder="Orgão Expedidor" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="dataNasc" name="dataNasc" placeholder="Data Nascimento" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="ufNasc" name="ufNasc" class="form-control input-lg">
+                                                <option value="ac">AC</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cidadeNasc" name="cidadeNasc" placeholder="Cidade Nascimento" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Sexo:
+                                            <input type="radio" id="sexof" name="sexof" value="Feminino" />Feminino
+                                            <input type="radio" id="sexom" name="sexom" value="Masculino" />Masculino
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="estadoCivil" name="estadoCivil" class="form-control input-lg">
+                                                <option value="Solteiro(a)">Solteiro(a)</option>
+                                                <option value="Casado(a)">Casado(a)</option>
+                                                <option value="União Estavel">União Estável</option>
+                                                <option value="Divorciado(a)">Divorciado(a)</option>
+                                                <option value="Viúvo(a)">Viúvo(a)</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="escolaridade" name="escolaridade" class="form-control input-lg">
+                                                <option value="Primeiro Grau">Primeiro Grau</option>
+                                                <option value="Segundo Grau">Segundo Grau</option>
+                                                <option value="Superior">Superior</option>
+                                                <option value="Pós Graduação">Pós Graduação</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="nomePai" name="nomePai" placeholder="Nome Pai" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="nomeMae" name="nomeMae" placeholder="Nome Mãe" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="dependentes" name="dependentes" placeholder="Dependentes" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="endereco" name="endereco" placeholder="Endereço" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="numEndereco" name="numEndereco" placeholder="Número" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cep" name="cep" placeholder="CEP" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="estado" name="estado" placeholder="Estado" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cidade" name="cidade" placeholder="Cidade" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tempoRisidencia" name="tempoRisidencia" placeholder="Tempo Residência" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tipoResidencia" name="tipoResidencia" placeholder="Tipo Residência" class="form-control input-lg" />
+                                        </div>
+                                        <h4>Dados Profissionais</h4><hr />
+                                        <div class="form-group">
+                                            <input type="text" id="empresa" name="empresa" placeholder="Empresa" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ (caso empresa própria)" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cargo" name="cargo" placeholder="Cargo/Função" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="dataAdmissao" name="dataAdmissao" placeholder="Data Admissão" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tipoComprovacao" name="tipoComprovacao" placeholder="Tipo Comprovacao" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="renda" name="renda" placeholder="Renda Mensal" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="enderecoEmp" name="enderecoEmp" placeholder="Endereço" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="numEnderecoEmp" name="numEnderecoEmp" placeholder="Número" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="complementoEmp" name="complementoEmp" placeholder="Complemento" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="bairroEmp" name="bairroEmp" placeholder="Bairro" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cidadeEmp" name="cidadeEmp" placeholder="Cidade" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="cepEmp" name="cepEmp" placeholder="CEP" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="estadoEmp" name="estadoEmp" placeholder="UF" class="form-control input-lg" />
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <input type="text" id="telefoneEmp" name="telefoneEmp" placeholder="Telefone" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="ramal" name="ramal" placeholder="Ramal" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="empregoAnterior" name="empregoAnterior" placeholder="Emprego Anterior (Empresa/Cargo)" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" placeholder="Telefone" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tempoEmpresa" name="tempoEmpresa" placeholder="Tempo Empresa" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="outrasRendas" name="outrasRendas" placeholder="Outras Rendas" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="descOutrasRendas" name="descOutrasRendas" placeholder="Descrição de Outras Rendas" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="numBeneficio" name="numBeneficio" placeholder="Número do Benefício" class="form-control input-lg" />
+                                        </div>
+                                        <h4>Referências Bancárias e de Crédito</h4><hr />
+                                        <div class="form-group">
+                                            <input type="text" id="bancoUm" name="bancoUm" placeholder="Banco 1" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="agenciaUm" name="agenciaUm" placeholder="Agência" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="contaUm" name="contaUm" placeholder="Conta" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tempoContaUm" name="tempoContaUm" placeholder="Tempo de Conta" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="limiteChequeUm" name="limiteChequeUm" placeholder="Limite Chq. Esp." class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="bancoDois" name="bancoDois" placeholder="Banco 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="agenciaDois" name="AgenciaDois" placeholder="Agencia 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="contaDois" name="contaDois" placeholder="Conta 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="tempoContaDois" name="tempoContaDois" placeholder="Tempo de Conta 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="limiteChequeDois" name="limiteChequeDois" placeholder="Limite Chq. Esp. 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="tipoCartao" name="tipoCartao" class="form-control input-lg">
+                                                <option value="Nacional">Nacional</option>
+                                                <option value="Internacional">Internacional</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="operadora" name="operadora" class="form-control input-lg">
+                                                <option value="Visa">Visa</option>
+                                                <option value="MasterCard">MasterCard</option>
+                                                <option value="Gold">Gold</option>
+                                                <option value="Diners">Diners</option>
+                                                <option value="Amex">Amex</option>
+                                                <option value="Outros">Outros</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="observacao" name="observacao" placeholder="Observação" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="limiteCartao" name="limiteCartao" placeholder="Limite Cartão" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Já financiou outro veículo?
+                                            <select id="jaFinanciou" name="jaFinanciou" class="form-control input-lg">
+                                                <option value="Sim">Sim</option>
+                                                <option value="Não">Não</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="financeira" name="financeira" placeholder="Financeira" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Situação
+                                            <select id="situacao" name="situacao" class="form-control input-lg">
+                                                <option value="Em Andamento">Em Andamento</option>
+                                                <option value="Quitado">Quitado</option>
+                                            </select>
+                                        </div>
+                                        <h4>Lista de Bens</h4><hr />
+                                        <div class="form-group">
+                                            Tipo de Bem 01
+                                            <select id="tipoBemUm" name="tipoBemUm" class="form-control input-lg">
+                                                <option value="Imóvel">Imóvel</option>
+                                                <option value="Veículo">Veículo</option>
+                                                <option value="Outros">Outros</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="descricaoBemUm" name="descricaoBemUm" placeholder="Descrição/Modelo" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="valorBemUm" name="valorBemUm" placeholder="Valor" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Tipo de Bem 02
+                                            <select id="tipoBemDois" name="tipoBemDois" class="form-control input-lg">
+                                                <option value="Imóvel">Imóvel</option>
+                                                <option value="Veículo">Veículo</option>
+                                                <option value="Outros">Outros</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="descricaoBemDois" name="descricaoBemDois" placeholder="Descrição/Modelo 02" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="valorBemDois" name="valorBemDois" placeholder="Valor 02" class="form-control input-lg" />
+                                        </div>
+                                        <h4>Autorização</h4><hr />
+                                        <div class="form-group">
+                                            <input type="checkbox" id="autorizacao" name="autorizacao" checked/>
+                                            Autorizo o envio de informações a respeito da proposta de crédito ao email nela informado.
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar">
+                                        </div>
                                 </div>
+                                    </div>
                             </form>
                             <div class="clearfix"></div>
                             <div id="message"></div>

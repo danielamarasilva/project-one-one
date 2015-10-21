@@ -20,6 +20,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -140,6 +144,7 @@
     <Content Include="images\vin_locations.png" />
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
+    <Content Include="js\financiamentoController.js" />
     <Content Include="js\helper-plugins.js" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery-2.0.0.min.js" />
@@ -288,6 +293,7 @@
     <None Include="css\fonts\outlined-iconset.eot" />
     <None Include="css\fonts\outlined-iconset.ttf" />
     <None Include="css\fonts\outlined-iconset.woff" />
+    <Content Include="financing\sendContact.php" />
     <None Include="images\.DS_Store" />
     <None Include="images\assets\.DS_Store" />
     <None Include="images\body-types\.DS_Store" />
@@ -313,6 +319,7 @@
     <None Include="vendor\revslider\images\gradient\.DS_Store" />
     <None Include="vendor\revslider\js\.DS_Store" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

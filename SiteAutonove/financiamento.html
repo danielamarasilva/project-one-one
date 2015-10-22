@@ -109,25 +109,32 @@
                         <div class="col-md-3 col-sm-4">
                         </div>
                         <div class="col-md-9 col-sm-8">
-                            <form method="post" id="contactform" name="contactform" class="contact-form clearfix" action="mail/contact.php">
+                            <form id="formFinanciamento" name="formFinanciamento" class="contact-form clearfix">
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <h4>Descrição do bem</h4><hr />
+                                        <h4>Descrição do bem</h4>
+                                        <hr />
                                         <div class="form-group">
-                                            <input type="text" id="veiculo" name="veiculo" class="form-control input-lg" placeholder="Veículo*" required>
+                                            Veículo: <span class="required-itens">*</span>
+                                            <input type="text" id="veiculo" name="veiculo" class="form-control input-lg" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="anoModelo" name="anoModelo" class="form-control input-lg" placeholder="Ano/Modelo" required>
+                                            Ano/Modelo: <span class="required-itens">*</span>
+                                            <input type="text" id="anoModelo" name="anoModelo" class="form-control input-lg" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="valorEntrada" name="valorEntrada" class="form-control input-lg" placeholder="Valor Entrada*" required>
+                                            Valor Entrada: <span class="required-itens">*</span>
+                                            <input type="number" id="valorEntrada" name="valorEntrada" class="form-control input-lg" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="valorFinanciado" name="valorFinanciado" class="form-control input-lg" placeholder="Valor Financiado" required>
+                                            Valor Financiado: <span class="required-itens">*</span>
+                                            <input type="number" id="valorFinanciado" name="valorFinanciado" class="form-control input-lg" required>
                                         </div>
                                         <div class="form-group">
+                                            Número de Parcelas: <span class="required-itens">*</span>
                                             <select id="numParcelas" name="numParcelas" class="form-control input-lg">
-                                                <option value="6 meses">6  meses</option>
+                                                <option value="0">Escolha</option>
+                                                <option value="6 meses">6 meses</option>
                                                 <option value="12 meses">12 meses</option>
                                                 <option value="18 meses">18 meses</option>
                                                 <option value="24 meses">24 meses</option>
@@ -139,26 +146,35 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="vencParcela" name="vencParcela" class="form-control input-lg" placeholder="Venc Parcela" required />
+                                            Vencto 1 Parcela: <span class="required-itens">*</span>
+                                            <input type="text" id="vencParcela" name="vencParcela" class="form-control input-lg" required />
                                         </div>
-                                        <h4>Dados Pessoais</h4><hr />
+                                        <h4>Dados Pessoais</h4>
+                                        <hr />
                                         <div class="form-group">
-                                            <input type="text" id="nome" name="nome" placeholder="Nome" required class="form-control input-lg" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" id="cpf" name="cpf" placeholder="CPF" required class="form-control input-lg" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" id="telefone" name="telefone" placeholder="Telefone" required class="form-control input-lg" />
+                                            Nome Completo: <span class="required-itens">*</span>
+                                            <input type="text" id="nome" name="nome" required class="form-control input-lg"  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="celular" name="celular" placeholder="Celular" required class="form-control input-lg" />
+                                            CPF: <span class="required-itens">*</span>
+                                            <input type="number" id="cpf" name="cpf" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" id="email" name="email" placeholder="Email" required class="form-control input-lg" />
+                                            Telefone: <span class="required-itens">*</span>
+                                            <input type="number" id="telefone" name="telefone" required class="form-control input-lg" maxlength="11" />
                                         </div>
                                         <div class="form-group">
+                                            Celular:
+                                            <input type="number" id="celular" name="celular" class="form-control input-lg" maxlength="11" />
+                                        </div>
+                                        <div class="form-group">
+                                            Email: <span class="required-itens">*</span>
+                                            <input type="email" id="email" name="email" required class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Tipo de documento <span class="required-itens">*</span>
                                             <select id="tipoDoc" name="TipoDoc" class="form-control input-lg">
+                                                <option value="0">Escolha</option>
                                                 <option value="rg">RG</option>
                                                 <option value="rne">RNE</option>
                                                 <option value="cnh">CNH</option>
@@ -166,35 +182,71 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="numDoc" name="numDoc" placeholder="Número Documento" required class="form-control input-lg" />
+                                            Número do documento: <span class="required-itens">*</span>
+                                            <input type="number" id="numDoc" name="numDoc" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="emissaoDoc" name="emissaoDoc" placeholder="Emissão Documento" required class="form-control input-lg" />
+                                            Emissão do documento: <span class="required-itens">*</span>
+                                            <input type="text" id="emissaoDoc" name="emissaoDoc" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="orgaoExpedidor" name="orgaoExpedidor" placeholder="Orgão Expedidor" required class="form-control input-lg" />
+                                            Órgão Expedidor: <span class="required-itens">*</span>
+                                            <input type="text" id="orgaoExpedidor" name="orgaoExpedidor" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="dataNasc" name="dataNasc" placeholder="Data Nascimento" required class="form-control input-lg" />
+                                            Data de nascimento: <span class="required-itens">*</span>
+                                            <input type="text" id="dataNasc" name="dataNasc" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
+                                            UF de nascimento: <span class="required-itens">*</span>
                                             <select id="ufNasc" name="ufNasc" class="form-control input-lg">
-                                                <option value="ac">AC</option>
+                                                <option value="0">Escolha</option>
+                                                <option value="AC">AC</option>
+                                                <option value="AL">AL</option>
+                                                <option value="AP">AP</option>
+                                                <option value="AM">AM</option>
+                                                <option value="BA">BA</option>
+                                                <option value="CE">CE</option>
+                                                <option value="DF">DF</option>
+                                                <option value="ES">ES</option>
+                                                <option value="GO">GO</option>
+                                                <option value="MA">MA</option>
+                                                <option value="MT">MT</option>
+                                                <option value="MS">MS</option>
+                                                <option value="MG">MG</option>
+                                                <option value="PA">PA</option>
+                                                <option value="PB">PB</option>
+                                                <option value="PR">PR</option>
+                                                <option value="PE">PE</option>
+                                                <option value="PI">PI</option>
+                                                <option value="RJ">RJ</option>
+                                                <option value="RN">RN</option>
+                                                <option value="RS">RS</option>
+                                                <option value="RO">RO</option>
+                                                <option value="RR">RR</option>
+                                                <option value="SC">SC</option>
+                                                <option value="SP">SP</option>
+                                                <option value="SE">SE</option>
+                                                <option value="TO">TO</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="cidadeNasc" name="cidadeNasc" placeholder="Cidade Nascimento" required class="form-control input-lg" />
+                                            Cidade de nascimento: <span class="required-itens">*</span>
+                                            <input type="text" id="cidadeNasc" name="cidadeNasc" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade" required class="form-control input-lg" />
+                                            Nacionalidade: <span class="required-itens">*</span>
+                                            <input type="text" id="nacionalidade" name="nacionalidade" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            Sexo:
-                                            <input type="radio" id="sexof" name="sexof" value="Feminino" />Feminino
-                                            <input type="radio" id="sexom" name="sexom" value="Masculino" />Masculino
+                                            Sexo: <span class="required-itens">*</span><br />
+                                            <input type="radio" id="sexof" name="sexo" value="Feminino" />Feminino
+                                            <input type="radio" id="sexom" name="sexo" value="Masculino" />Masculino
                                         </div>
                                         <div class="form-group">
+                                            Estado civil: <span class="required-itens">*</span>
                                             <select id="estadoCivil" name="estadoCivil" class="form-control input-lg">
+                                                <option value="0">Escolha</option>
                                                 <option value="Solteiro(a)">Solteiro(a)</option>
                                                 <option value="Casado(a)">Casado(a)</option>
                                                 <option value="União Estavel">União Estável</option>
@@ -203,7 +255,9 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            Escolaridade: <span class="required-itens">*</span>
                                             <select id="escolaridade" name="escolaridade" class="form-control input-lg">
+                                                <option value="0">Escolha</option>
                                                 <option value="Primeiro Grau">Primeiro Grau</option>
                                                 <option value="Segundo Grau">Segundo Grau</option>
                                                 <option value="Superior">Superior</option>
@@ -211,142 +265,189 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="nomePai" name="nomePai" placeholder="Nome Pai" required class="form-control input-lg" />
+                                            Nome do Pai: <span class="required-itens">*</span>
+                                            <input type="text" id="nomePai" name="nomePai" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="nomeMae" name="nomeMae" placeholder="Nome Mãe" required class="form-control input-lg" />
+                                            Nome da mãe: <span class="required-itens">*</span>
+                                            <input type="text" id="nomeMae" name="nomeMae" required class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="dependentes" name="dependentes" placeholder="Dependentes" class="form-control input-lg" />
+                                            Dependentes:
+                                            <input type="text" id="dependentes" name="dependentes" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="endereco" name="endereco" placeholder="Endereço" class="form-control input-lg" />
+                                            Endereço:
+                                            <input type="text" id="endereco" name="endereco" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="numEndereco" name="numEndereco" placeholder="Número" class="form-control input-lg" />
+                                            Número:
+                                            <input type="number" id="numEndereco" name="numEndereco" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" class="form-control input-lg" />
+                                            Bairro:
+                                            <input type="text" id="bairro" name="bairro" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="cep" name="cep" placeholder="CEP" class="form-control input-lg" />
+                                            CEP:
+                                            <input type="number" id="cep" name="cep" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="estado" name="estado" placeholder="Estado" class="form-control input-lg" />
+                                            Estado:
+                                            <input type="text" id="estado" name="estado" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="cidade" name="cidade" placeholder="Cidade" class="form-control input-lg" />
+                                            Cidade:
+                                            <input type="text" id="cidade" name="cidade" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tempoRisidencia" name="tempoRisidencia" placeholder="Tempo Residência" class="form-control input-lg" />
+                                            Tempo de residência:
+                                            <input type="text" id="tempoRisidencia" name="tempoRisidencia" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tipoResidencia" name="tipoResidencia" placeholder="Tipo Residência" class="form-control input-lg" />
+                                            Tipo de residência:
+                                            <input type="text" id="tipoResidencia" name="tipoResidencia" class="form-control input-lg" />
                                         </div>
-                                        <h4>Dados Profissionais</h4><hr />
+                                        <h4>Dados Profissionais</h4>
+                                        <hr />
                                         <div class="form-group">
-                                            <input type="text" id="empresa" name="empresa" placeholder="Empresa" class="form-control input-lg" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ (caso empresa própria)" class="form-control input-lg" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" id="cargo" name="cargo" placeholder="Cargo/Função" class="form-control input-lg" />
+                                            Empresa:
+                                            <input type="text" id="empresa" name="empresa" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="dataAdmissao" name="dataAdmissao" placeholder="Data Admissão" class="form-control input-lg" />
+                                            CNPJ:
+                                            <input type="text" id="cnpj" name="cnpj" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tipoComprovacao" name="tipoComprovacao" placeholder="Tipo Comprovacao" class="form-control input-lg" />
+                                            Cargo:
+                                            <input type="text" id="cargo" name="cargo" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="renda" name="renda" placeholder="Renda Mensal" class="form-control input-lg" />
+                                            Data de admissão:
+                                            <input type="text" id="dataAdmissao" name="dataAdmissao" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="enderecoEmp" name="enderecoEmp" placeholder="Endereço" class="form-control input-lg" />
+                                            Tipo de comprovação:
+                                            <input type="text" id="tipoComprovacao" name="tipoComprovacao" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="numEnderecoEmp" name="numEnderecoEmp" placeholder="Número" class="form-control input-lg" />
+                                            Renda Mensal:
+                                            <input type="number" id="renda" name="renda" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="complementoEmp" name="complementoEmp" placeholder="Complemento" class="form-control input-lg" />
+                                            Endereço empresa:
+                                            <input type="text" id="enderecoEmp" name="enderecoEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="bairroEmp" name="bairroEmp" placeholder="Bairro" class="form-control input-lg" />
+                                            Número:
+                                            <input type="number" id="numEnderecoEmp" name="numEnderecoEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="cidadeEmp" name="cidadeEmp" placeholder="Cidade" class="form-control input-lg" />
+                                            Complemento:
+                                            <input type="text" id="complementoEmp" name="complementoEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="cepEmp" name="cepEmp" placeholder="CEP" class="form-control input-lg" />
+                                            Bairro:
+                                            <input type="text" id="bairroEmp" name="bairroEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="estadoEmp" name="estadoEmp" placeholder="UF" class="form-control input-lg" />
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" id="telefoneEmp" name="telefoneEmp" placeholder="Telefone" class="form-control input-lg" />
+                                            Cidade:
+                                            <input type="text" id="cidadeEmp" name="cidadeEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="ramal" name="ramal" placeholder="Ramal" class="form-control input-lg" />
+                                            CEP:
+                                            <input type="number" id="cepEmp" name="cepEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="empregoAnterior" name="empregoAnterior" placeholder="Emprego Anterior (Empresa/Cargo)" class="form-control input-lg" />
+                                            Estado:
+                                            <input type="text" id="estadoEmp" name="estadoEmp" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" placeholder="Telefone" class="form-control input-lg" />
+                                            Telefone:
+                                            <input type="number" id="telefoneEmp" name="telefoneEmp" class="form-control input-lg" maxlength="11" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tempoEmpresa" name="tempoEmpresa" placeholder="Tempo Empresa" class="form-control input-lg" />
+                                            Ramal:
+                                            <input type="text" id="ramal" name="ramal" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="outrasRendas" name="outrasRendas" placeholder="Outras Rendas" class="form-control input-lg" />
+                                            Emprego anterior:
+                                            <input type="text" id="empregoAnterior" name="empregoAnterior" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="descOutrasRendas" name="descOutrasRendas" placeholder="Descrição de Outras Rendas" class="form-control input-lg" />
+                                            Telefone:
+                                            <input type="number" id="telefoneEmpAnterior" name="telefoneEmpAnterior" class="form-control input-lg" maxlength="11" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="numBeneficio" name="numBeneficio" placeholder="Número do Benefício" class="form-control input-lg" />
-                                        </div>
-                                        <h4>Referências Bancárias e de Crédito</h4><hr />
-                                        <div class="form-group">
-                                            <input type="text" id="bancoUm" name="bancoUm" placeholder="Banco 1" class="form-control input-lg" />
+                                            Tempo de empresa:
+                                            <input type="text" id="tempoEmpresa" name="tempoEmpresa" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="agenciaUm" name="agenciaUm" placeholder="Agência" class="form-control input-lg" />
+                                            Outras rendas:
+                                            <input type="text" id="outrasRendas" name="outrasRendas" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="contaUm" name="contaUm" placeholder="Conta" class="form-control input-lg" />
+                                            Descrição das outras rendas:
+                                            <input type="text" id="descOutrasRendas" name="descOutrasRendas" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tempoContaUm" name="tempoContaUm" placeholder="Tempo de Conta" class="form-control input-lg" />
+                                            Número do benefício:
+                                            <input type="text" id="numBeneficio" name="numBeneficio" class="form-control input-lg" />
+                                        </div>
+                                        <h4>Referências Bancárias e de Crédito</h4>
+                                        <hr />
+                                        <div class="form-group">
+                                            Banco 01:
+                                            <input type="text" id="bancoUm" name="bancoUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="limiteChequeUm" name="limiteChequeUm" placeholder="Limite Chq. Esp." class="form-control input-lg" />
+                                            Agência:
+                                            <input type="text" id="agenciaUm" name="agenciaUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="bancoDois" name="bancoDois" placeholder="Banco 02" class="form-control input-lg" />
+                                            Conta:
+                                            <input type="text" id="contaUm" name="contaUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="agenciaDois" name="AgenciaDois" placeholder="Agencia 02" class="form-control input-lg" />
+                                            Tempo de conta:
+                                            <input type="text" id="tempoContaUm" name="tempoContaUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="contaDois" name="contaDois" placeholder="Conta 02" class="form-control input-lg" />
+                                            Limite de cheque especial:
+                                            <input type="text" id="limiteChequeUm" name="limiteChequeUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="tempoContaDois" name="tempoContaDois" placeholder="Tempo de Conta 02" class="form-control input-lg" />
+                                            Banco 02
+                                            <input type="text" id="bancoDois" name="bancoDois" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="limiteChequeDois" name="limiteChequeDois" placeholder="Limite Chq. Esp. 02" class="form-control input-lg" />
+                                            Agência
+                                            <input type="text" id="agenciaDois" name="AgenciaDois" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
+                                            Conta:
+                                            <input type="text" id="contaDois" name="contaDois" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Tempo de conta:
+                                            <input type="text" id="tempoContaDois" name="tempoContaDois" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Limite de cheque especial:
+                                            <input type="text" id="limiteChequeDois" name="limiteChequeDois" class="form-control input-lg" />
+                                        </div>
+                                        <div class="form-group">
+                                            Tipo de cartão:
                                             <select id="tipoCartao" name="tipoCartao" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Nacional">Nacional</option>
                                                 <option value="Internacional">Internacional</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            Operadora:
                                             <select id="operadora" name="operadora" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Visa">Visa</option>
                                                 <option value="MasterCard">MasterCard</option>
                                                 <option value="Gold">Gold</option>
@@ -356,67 +457,79 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="observacao" name="observacao" placeholder="Observação" class="form-control input-lg" />
+                                            Observação:
+                                            <input type="text" id="observacao" name="observacao" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="limiteCartao" name="limiteCartao" placeholder="Limite Cartão" class="form-control input-lg" />
+                                            Limite de crédito:
+                                            <input type="text" id="limiteCartao" name="limiteCartao" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
                                             Já financiou outro veículo?
                                             <select id="jaFinanciou" name="jaFinanciou" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Sim">Sim</option>
                                                 <option value="Não">Não</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="financeira" name="financeira" placeholder="Financeira" class="form-control input-lg" />
+                                            Financeira:
+                                            <input type="text" id="financeira" name="financeira" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
                                             Situação
                                             <select id="situacao" name="situacao" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Em Andamento">Em Andamento</option>
                                                 <option value="Quitado">Quitado</option>
                                             </select>
                                         </div>
-                                        <h4>Lista de Bens</h4><hr />
+                                        <h4>Lista de Bens</h4>
+                                        <hr />
                                         <div class="form-group">
                                             Tipo de Bem 01
                                             <select id="tipoBemUm" name="tipoBemUm" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Imóvel">Imóvel</option>
                                                 <option value="Veículo">Veículo</option>
                                                 <option value="Outros">Outros</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="descricaoBemUm" name="descricaoBemUm" placeholder="Descrição/Modelo" class="form-control input-lg" />
+                                            Descrição/Modelo:
+                                            <input type="text" id="descricaoBemUm" name="descricaoBemUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="valorBemUm" name="valorBemUm" placeholder="Valor" class="form-control input-lg" />
+                                            Valor:
+                                            <input type="number" id="valorBemUm" name="valorBemUm" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
                                             Tipo de Bem 02
                                             <select id="tipoBemDois" name="tipoBemDois" class="form-control input-lg">
+                                                <option value="-1">Escolha</option>
                                                 <option value="Imóvel">Imóvel</option>
                                                 <option value="Veículo">Veículo</option>
                                                 <option value="Outros">Outros</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="descricaoBemDois" name="descricaoBemDois" placeholder="Descrição/Modelo 02" class="form-control input-lg" />
+                                            Descrição/Modelo:
+                                            <input type="text" id="descricaoBemDois" name="descricaoBemDois" class="form-control input-lg" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="valorBemDois" name="valorBemDois" placeholder="Valor 02" class="form-control input-lg" />
+                                            Valor:
+                                            <input type="number" id="valorBemDois" name="valorBemDois" class="form-control input-lg" />
                                         </div>
-                                        <h4>Autorização</h4><hr />
+                                        <h4>Autorização</h4>
+                                        <hr />
                                         <div class="form-group">
-                                            <input type="checkbox" id="autorizacao" name="autorizacao" checked/>
-                                            Autorizo o envio de informações a respeito da proposta de crédito ao email nela informado.
+                                            <input type="checkbox" id="autorizacao" name="autorizacao" value="Sim" checked/> Autorizo o envio de informações a respeito da proposta de crédito ao email nela informado.
                                         </div>
                                         <div class="form-group">
                                             <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar">
                                         </div>
-                                </div>
                                     </div>
+                                </div>
                             </form>
                             <div class="clearfix"></div>
                             <div id="message"></div>

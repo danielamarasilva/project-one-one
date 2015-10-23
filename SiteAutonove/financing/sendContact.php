@@ -429,4 +429,3 @@ $html = '<!DOCTYPE HTML>'.
             '</html>';
 
 echo $html;
-?>

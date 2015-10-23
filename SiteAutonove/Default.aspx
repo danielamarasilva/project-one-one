@@ -23,8 +23,7 @@
                     <ul class="utility-icons social-icons social-icons-colored">
                         <li class="facebook"><a href="https://www.facebook.com/autonove" target="_blank"><i
                             class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="https://twitter.com/autonove" target="_blank"><i class="fa fa-twitter">
-                        </i></a></li>
+                        <li class="twitter"><a href="https://twitter.com/autonove" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="googleplus"><a href="https://plus.google.com/105175365601776402969/about"
                             target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -38,13 +37,14 @@
         <div id="content" class="content full">
             <div class="container">
                 <div class="row">
+                    <h2>Destaques</h2>
                     <div class="sort-destination gallery-grid" data-sort-id="gallery">
                         <asp:Repeater ID="RepeaterEstoque" runat="server" OnItemDataBound="RepeaterEstoque_ItemDataBound"
                             OnItemCommand="RepeaterEstoque_ItemCommand">
                             <ItemTemplate>
                                 <div class="col-md-3 col-sm-4 grid-item format-image images">
                                     <div class="grid-item-inner">
-                                        <asp:HyperLink ID="linkEstoque" runat="server" data-rel="prettyPhoto" class="media-box">
+                                        <asp:HyperLink ID="linkEstoque" runat="server" >
                                             <asp:Image ID="imageVeiculo" runat="server" />
                                         </asp:HyperLink>
                                         <div class="grid-content">
@@ -58,6 +58,7 @@
                                                 <asp:Label ID="lblDescricao" runat="server"></asp:Label><br />
                                                 <asp:Label ID="lblDetalhes" runat="server"></asp:Label>
                                             </p>
+                                            <asp:Button ID="BtnDetalhar" runat="server" Text="Detalhes" class="btn btn-primary" />
                                         </div>
                                     </div>
                                 </div>
@@ -65,11 +66,6 @@
                         </asp:Repeater>
                     </div>
                 </div>
-                <!-- Pagination -->
-                <ul class="pager pull-right">
-                    <li><a href="#">&larr; Older</a></li>
-                    <li><a href="#">Newer &rarr;</a></li>
-                </ul>
             </div>
         </div>
     </div>

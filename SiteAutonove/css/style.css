@@ -503,6 +503,19 @@ label {
 	padding-top:125px;
 	padding-bottom:125px;
 }
+.text-negrito
+{
+    font-weight:bold;
+}
+.text-preco-destaque
+{
+    font-size: 2em;
+}
+.text-validacao
+{
+    color:red;
+    display:block;
+}
 /* ==================================================
    5. Spacers Sets
 ================================================== */
@@ -3900,6 +3913,7 @@ h1.page-title{
 	margin-bottom: 3%;
 	border-bottom: medium none;
 	margin-top:2px;
+    height:450px;
 }
 .isotope-events .grid-item.event-list-item{
 	margin-bottom:0;

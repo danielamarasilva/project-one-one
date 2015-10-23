@@ -23,11 +23,13 @@ namespace SiteAutonove
 
         protected void RepeaterEstoque_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            // Objeto com dados do carro a partir item do repeater
             Veiculo veiculo = (Veiculo)e.Item.DataItem;
 
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
+                HyperLink linkEstoque = (HyperLink)e.Item.FindControl("linkEstoque");
+                linkEstoque.NavigateUrl = "Detalhes.aspx?veic=" + veiculo.Id;
+
                 Image imageVeiculo = (Image)e.Item.FindControl("imageVeiculo");
                 imageVeiculo.ImageUrl = veiculo.Fotos[0];
                 imageVeiculo.AlternateText = veiculo.Modelo;
@@ -41,20 +43,8 @@ namespace SiteAutonove
                 Label lblDescricao = (Label)e.Item.FindControl("lblDescricao");
                 lblDescricao.Text = veiculo.Versao + " " + veiculo.AnoFabricacao + "/" + veiculo.AnoModelo;
 
-                //Label lblDetalhes = (Label)e.Item.FindControl("lblDetalhes");
-                //lblDetalhes.Text = veiculo.Cor + " " + veiculo.Transmissao + " " + veiculo.Opcionais;
-
-                //Label lblVersao = (Label)e.Item.FindControl("lblVersao");
-                //lblVersao.Text = veiculo.Versao;
-
-                //Label lblAnoFabricacao = (Label)e.Item.FindControl("lblAnoFabricacao");
-                //lblAnoFabricacao.Text = veiculo.AnoFabricacao;
-
-                //Label lblAnoModelo = (Label)e.Item.FindControl("lblAnoModelo");
-                //lblAnoModelo.Text = veiculo.AnoModelo;
-
-                //Button buttonInteresse = (Button)e.Item.FindControl("ButtonInteresse");
-                //buttonInteresse.CommandArgument = versaoDC.Id.ToString();
+                Button BtnDetalhar = (Button)e.Item.FindControl("BtnDetalhar");
+                BtnDetalhar.CommandArgument = veiculo.Id.ToString();
             }
         }
 
@@ -62,9 +52,9 @@ namespace SiteAutonove
         {
             try
             {
-                Response.Redirect("InteresseNovos.aspx?verId=" + e.CommandArgument, false);
+                Response.Redirect("Detalhes.aspx?veic=" + e.CommandArgument, false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.Redirect("Erro.aspx", false);
             }

@@ -7,3 +7,4 @@ C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\bin\SiteAutonove.dll
 C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\bin\SiteAutonove.pdb
 C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.dll
 C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.pdb
+C:\Users\Daniela\Desktop\4Life-Autonove\SiteAutonove\obj\Debug\SiteAutonove.csprojResolveAssemblyReference.cache

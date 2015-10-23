@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contato.aspx" />
     <Content Include="contato.html" />
     <Content Include="css\animations.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -75,9 +76,11 @@
     <Content Include="css\navstylechange.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Detalhes.aspx" />
     <Content Include="empresa.html" />
     <Content Include="Estoque.aspx" />
-    <Content Include="financiamento.html" />
+    <Content Include="Financiamento.aspx" />
+    <Content Include="financiamento1.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\assets\ajax-loader.gif" />
     <Content Include="images\assets\error.gif" />
@@ -257,12 +260,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detalhes.aspx.cs">
+      <DependentUpon>Detalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detalhes.aspx.designer.cs">
+      <DependentUpon>Detalhes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Estoque.aspx.cs">
       <DependentUpon>Estoque.aspx</DependentUpon>
@@ -271,6 +288,14 @@
     <Compile Include="Estoque.aspx.designer.cs">
       <DependentUpon>Estoque.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Financiamento.aspx.cs">
+      <DependentUpon>Financiamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Financiamento.aspx.designer.cs">
+      <DependentUpon>Financiamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MailSender.cs" />
     <Compile Include="Pages.Master.cs">
       <DependentUpon>Pages.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

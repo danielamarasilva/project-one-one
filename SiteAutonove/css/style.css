@@ -516,6 +516,11 @@ label {
     color:red;
     display:block;
 }
+.texto-regex-expl
+{
+    font-size:.75em;
+    display:block;
+}
 /* ==================================================
    5. Spacers Sets
 ================================================== */

@@ -33,6 +33,9 @@
     <div class="main" role="main">
         <div id="content" class="content full">
             <div class="container">
+                <div class="clearfix"></div>
+                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
+                <div id="message"></div>
                 <div class="listing-header margin-40">
                     <h2>Ficha de Cadastro - Financiamento</h2>
                 </div>
@@ -52,14 +55,14 @@
                                     </div>
                                     <div class="form-group">
                                         Ano/Modelo: <span class="required-itens">*</span>
-                                        <input runat="server" type="text" id="anoModelo" name="anoModelo" class="form-control input-lg">
+                                        <input runat="server" type="text" id="anoModelo" name="anoModelo" class="form-control input-lg" maxlength="4">
                                     </div>
                                     <div class="form-group">
-                                        Valor Entrada: <span class="required-itens">*</span>
+                                        Valor Entrada: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 1100,50</span>
                                         <input runat="server" type="text" id="valorEntrada" name="valorEntrada" class="form-control input-lg">
                                     </div>
                                     <div class="form-group">
-                                        Valor Financiado: <span class="required-itens">*</span>
+                                        Valor Financiado: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 1100,50</span>
                                         <input runat="server" type="text" id="valorFinanciado" name="valorFinanciado" class="form-control input-lg">
                                     </div>
                                     <div class="form-group">
@@ -78,9 +81,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        Vencto 1 Parcela: <span class="required-itens">*</span>
-                                        <asp:TextBox ID="vencParcela" runat="server" class="form-control input-lg" Mask="##/##/####"></asp:TextBox>
-                                        <%--<input runat="server" type="text" id="vencParcela" name="vencParcela" class="form-control input-lg" />--%>
+                                        Vencto 1 Parcela: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 01/01/1900</span>
+                                        <asp:TextBox ID="vencParcela" runat="server" class="form-control input-lg" MaxLength="10"></asp:TextBox>
                                     </div>
                                     <h4>Dados Pessoais</h4>
                                     <hr />
@@ -89,16 +91,16 @@
                                         <input runat="server" type="text" id="nome" name="nome" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        CPF: <span class="required-itens">*</span>
-                                        <input runat="server" type="text" id="cpf" name="cpf" class="form-control input-lg" />
+                                        CPF: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 999.999.999-99</span>
+                                        <input runat="server" type="text" id="cpf" name="cpf" class="form-control input-lg" maxlength="14" />
                                     </div>
                                     <div class="form-group">
-                                        Telefone: <span class="required-itens">*</span>
-                                        <input runat="server" type="text" id="telefone" name="telefone" class="form-control input-lg" maxlength="11" />
+                                        Telefone: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                        <input runat="server" type="text" id="telefone" name="telefone" class="form-control input-lg" maxlength="14" />
                                     </div>
                                     <div class="form-group">
-                                        Celular:
-                                            <input runat="server" type="text" id="celular" name="celular" class="form-control input-lg" maxlength="11" />
+                                        Celular:<span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                        <input runat="server" type="text" id="celular" name="celular" class="form-control input-lg" maxlength="14" />
                                     </div>
                                     <div class="form-group">
                                         Email: <span class="required-itens">*</span>
@@ -119,16 +121,16 @@
                                         <input runat="server" type="text" id="numDoc" name="numDoc" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Emissão do documento: <span class="required-itens">*</span>
-                                        <input runat="server" type="text" id="emissaoDoc" name="emissaoDoc" class="form-control input-lg" />
+                                        Emissão do documento: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 01/01/1900</span>
+                                        <input runat="server" type="text" id="emissaoDoc" name="emissaoDoc" class="form-control input-lg" maxlength="10" />
                                     </div>
                                     <div class="form-group">
                                         Órgão Expedidor: <span class="required-itens">*</span>
                                         <input runat="server" type="text" id="orgaoExpedidor" name="orgaoExpedidor" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Data de nascimento: <span class="required-itens">*</span>
-                                        <input runat="server" type="text" id="dataNasc" name="dataNasc" class="form-control input-lg" />
+                                        Data de nascimento: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 01/01/1900</span>
+                                        <input runat="server" type="text" id="dataNasc" name="dataNasc" class="form-control input-lg" maxlength="10" />
                                     </div>
                                     <div class="form-group">
                                         UF de nascimento: <span class="required-itens">*</span>
@@ -225,7 +227,7 @@
                                     </div>
                                     <div class="form-group">
                                         CEP:
-                                            <input runat="server" type="text" id="cep" name="cep" class="form-control input-lg" />
+                                            <input runat="server" type="text" id="cep" name="cep" class="form-control input-lg" maxlength="9" />
                                     </div>
                                     <div class="form-group">
                                         Estado:
@@ -251,23 +253,23 @@
                                     </div>
                                     <div class="form-group">
                                         CNPJ:
-                                            <input runat="server" type="text" id="cnpj" name="cnpj" class="form-control input-lg" />
+                                            <input runat="server" type="text" id="cnpj" name="cnpj" class="form-control input-lg" maxlength="18" />
                                     </div>
                                     <div class="form-group">
                                         Cargo:
                                             <input runat="server" type="text" id="cargo" name="cargo" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Data de admissão:
-                                            <input runat="server" type="text" id="dataAdmissao" name="dataAdmissao" class="form-control input-lg" />
+                                        Data de admissão:<span class="texto-regex-expl">Ex: 01/01/1900</span>
+                                        <input runat="server" type="text" id="dataAdmissao" name="dataAdmissao" class="form-control input-lg" maxlength="10" />
                                     </div>
                                     <div class="form-group">
                                         Tipo de comprovação:
                                             <input runat="server" type="text" id="tipoComprovacao" name="tipoComprovacao" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Renda Mensal:
-                                            <input runat="server" type="text" id="renda" name="renda" class="form-control input-lg" />
+                                        Renda Mensal:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="renda" name="renda" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Endereço empresa:
@@ -291,15 +293,15 @@
                                     </div>
                                     <div class="form-group">
                                         CEP:
-                                            <input runat="server" type="text" id="cepEmp" name="cepEmp" class="form-control input-lg" />
+                                            <input runat="server" type="text" id="cepEmp" name="cepEmp" class="form-control input-lg" maxlength="9" />
                                     </div>
                                     <div class="form-group">
                                         Estado:
                                             <input runat="server" type="text" id="estadoEmp" name="estadoEmp" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Telefone:
-                                            <input runat="server" type="text" id="telefoneEmp" name="telefoneEmp" class="form-control input-lg" maxlength="11" />
+                                        Telefone:<span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                        <input runat="server" type="text" id="telefoneEmp" name="telefoneEmp" class="form-control input-lg" maxlength="13" />
                                     </div>
                                     <div class="form-group">
                                         Ramal:
@@ -310,16 +312,16 @@
                                             <input runat="server" type="text" id="empregoAnterior" name="empregoAnterior" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Telefone:
-                                            <input runat="server" type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" class="form-control input-lg" maxlength="11" />
+                                        Telefone:<span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                        <input runat="server" type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" class="form-control input-lg" maxlength="11" />
                                     </div>
                                     <div class="form-group">
                                         Tempo de empresa:
                                             <input runat="server" type="text" id="tempoEmpresa" name="tempoEmpresa" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Outras rendas:
-                                            <input runat="server" type="text" id="outrasRendas" name="outrasRendas" class="form-control input-lg" />
+                                        Outras rendas:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="outrasRendas" name="outrasRendas" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Descrição das outras rendas:
@@ -348,8 +350,8 @@
                                             <input runat="server" type="text" id="tempoContaUm" name="tempoContaUm" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Limite de cheque especial:
-                                            <input runat="server" type="text" id="limiteChequeUm" name="limiteChequeUm" class="form-control input-lg" />
+                                        Limite de cheque especial:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="limiteChequeUm" name="limiteChequeUm" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Banco 02
@@ -368,13 +370,13 @@
                                             <input runat="server" type="text" id="tempoContaDois" name="tempoContaDois" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Limite de cheque especial:
-                                            <input runat="server" type="text" id="limiteChequeDois" name="limiteChequeDois" class="form-control input-lg" />
+                                        Limite de cheque especial:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="limiteChequeDois" name="limiteChequeDois" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Tipo de cartão:
                                             <select runat="server" id="tipoCartao" name="tipoCartao" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Nacional">Nacional</option>
                                                 <option value="Internacional">Internacional</option>
                                             </select>
@@ -382,7 +384,7 @@
                                     <div class="form-group">
                                         Operadora:
                                             <select runat="server" id="operadora" name="operadora" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Visa">Visa</option>
                                                 <option value="MasterCard">MasterCard</option>
                                                 <option value="Gold">Gold</option>
@@ -396,13 +398,13 @@
                                             <input runat="server" type="text" id="observacao" name="observacao" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Limite de crédito:
-                                            <input runat="server" type="text" id="limiteCartao" name="limiteCartao" class="form-control input-lg" />
+                                        Limite de crédito:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="limiteCartao" name="limiteCartao" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Já financiou outro veículo?
                                             <select runat="server" id="jaFinanciou" name="jaFinanciou" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Sim">Sim</option>
                                                 <option value="Não">Não</option>
                                             </select>
@@ -414,7 +416,7 @@
                                     <div class="form-group">
                                         Situação
                                             <select runat="server" id="situacao" name="situacao" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Em Andamento">Em Andamento</option>
                                                 <option value="Quitado">Quitado</option>
                                             </select>
@@ -424,7 +426,7 @@
                                     <div class="form-group">
                                         Tipo de Bem 01
                                             <select runat="server" id="tipoBemUm" name="tipoBemUm" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Imóvel">Imóvel</option>
                                                 <option value="Veículo">Veículo</option>
                                                 <option value="Outros">Outros</option>
@@ -435,13 +437,13 @@
                                             <input runat="server" type="text" id="descricaoBemUm" name="descricaoBemUm" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Valor:
-                                            <input runat="server" type="text" id="valorBemUm" name="valorBemUm" class="form-control input-lg" />
+                                        Valor:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="valorBemUm" name="valorBemUm" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
                                         Tipo de Bem 02
                                             <select runat="server" id="tipoBemDois" name="tipoBemDois" class="form-control input-lg">
-                                                <option value="-1">Escolha</option>
+                                                <option value="0">Escolha</option>
                                                 <option value="Imóvel">Imóvel</option>
                                                 <option value="Veículo">Veículo</option>
                                                 <option value="Outros">Outros</option>
@@ -452,8 +454,8 @@
                                             <input runat="server" type="text" id="descricaoBemDois" name="descricaoBemDois" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Valor:
-                                            <input runat="server" type="text" id="valorBemDois" name="valorBemDois" class="form-control input-lg" />
+                                        Valor:<span class="texto-regex-expl">Ex: 1100,50</span>
+                                        <input runat="server" type="text" id="valorBemDois" name="valorBemDois" class="form-control input-lg" />
                                     </div>
                                     <h4>Autorização</h4>
                                     <hr />
@@ -470,82 +472,226 @@
                         </form>
                         <div class="clearfix"></div>
                         <div>
-                            <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Informe o veículo"
+                            <!-- Itens obrigatórios -->
+                            <%--<div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*  Informe o veículo"
                                     ControlToValidate="veiculo" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Informe o ano do modelo"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*  Informe o ano do modelo"
                                     ControlToValidate="anoModelo" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Informe o valor da entrada"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*  Informe o valor da entrada"
                                     ControlToValidate="valorEntrada" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Informe o valor financiado"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*  Informe o valor financiado"
                                     ControlToValidate="valorFinanciado" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="* Informe o vencimento da parcela"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*  Informe o vencimento da parcela"
                                     ControlToValidate="vencParcela" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Informe o nome completo"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*  Informe o nome completo"
                                     ControlToValidate="nome" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Informe o cpf"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*  Informe o cpf"
                                     ControlToValidate="cpf" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="* Informe o telefone"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*  Informe o telefone"
                                     ControlToValidate="telefone" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="* Informe o celular"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="*  Informe o celular"
                                     ControlToValidate="celular" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="* Informe o email"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*  Informe o email"
                                     ControlToValidate="email" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="* Informe o número do documento"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="*  Informe o número do documento"
                                     ControlToValidate="numDoc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="* Informe a data de emissão do documento"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="*  Informe a data de emissão do documento"
                                     ControlToValidate="emissaoDoc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="* Informe o órgao expedidor"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="*  Informe o órgao expedidor"
                                     ControlToValidate="orgaoExpedidor" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="* Informe data de nascimento"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="*  Informe data de nascimento"
                                     ControlToValidate="dataNasc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
-                            </div>
-                            <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="* Informe a cidade de nascimento"
+                            </div>--%>
+                            <%--<div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*  Informe a cidade de nascimento"
                                     ControlToValidate="cidadeNasc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="* Informe a nacionalidade"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*  Informe a nacionalidade"
                                     ControlToValidate="nacionalidade" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="* Informe o nome do pai"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="*  Informe o nome do pai"
                                     ControlToValidate="nomePai" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="* Informe o nome da mãe"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="*  Informe o nome da mãe"
                                     ControlToValidate="nomeMae" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
+                            <div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="*  Informe o sexo"
+                                    ControlToValidate="sexo" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>--%>
+                            <!-- Expressões regulares -->
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Email inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="email" ValidationGroup="Enviar" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Telefone inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="telefone" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="* Celular inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="Celular" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="* Telefone emprego inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="telefoneEmp" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator39" runat="server" ErrorMessage="* Telefone emprego anterior inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="telefoneEmpAnterior" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="* CEP inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="cep" ValidationGroup="Enviar" ValidationExpression="^\d{5}-\d{3}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="* CEP empresa inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="cepEmp" ValidationGroup="Enviar" ValidationExpression="^\d{5}-\d{3}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="* CPF inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="cpf" ValidationGroup="Enviar" ValidationExpression="^\d{3}.\d{3}.\d{3}-\d{2}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="* CNPJ inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="cnpj" ValidationGroup="Enviar" ValidationExpression="^\d{2}.\d{3}.\d{3}/\d{4}-\d{2}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ErrorMessage="* Data de nascimento inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="dataNasc" ValidationGroup="Enviar" ValidationExpression="^\d{2}/\d{2}/\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ErrorMessage="* Data de admissão inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="dataAdmissao" ValidationGroup="Enviar" ValidationExpression="^\d{2}/\d{2}/\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="* Data de vencimento da 1ª parcela inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="vencParcela" ValidationGroup="Enviar" ValidationExpression="^\d{2}/\d{2}/\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ErrorMessage="* Data de emissão do documento inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="emissaoDoc" ValidationGroup="Enviar" ValidationExpression="^\d{2}/\d{2}/\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" ErrorMessage="* Ano/Modelo inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="anoModelo" ValidationGroup="Enviar" ValidationExpression="^\d{4}$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ErrorMessage="* Número do documento inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="numDoc" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ErrorMessage="* O número do endereço é inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="numEndereco" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator25" runat="server" ErrorMessage="* O número do endereço da empresa é inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="numEnderecoEmp" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator26" runat="server" ErrorMessage="* O número do ramal é inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="ramal" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator27" runat="server" ErrorMessage="* O número do benefício é inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="numBeneficio" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator28" runat="server" ErrorMessage="* Primeira agência inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="agenciaUm" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator29" runat="server" ErrorMessage="* Segunda agência inválida" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="agenciaDois" ValidationGroup="Enviar" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator30" runat="server" ErrorMessage="* Valor da entrada inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="valorEntrada" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator31" runat="server" ErrorMessage="* Valor financiado inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="valorFinanciado" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator32" runat="server" ErrorMessage="* Valor da renda inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="renda" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator33" runat="server" ErrorMessage="* Valor de outras rendas inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="outrasRendas" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator34" runat="server" ErrorMessage="* Valor do limite do cheque especial do banco 1 inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="limiteChequeUm" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator35" runat="server" ErrorMessage="* Valor do limite do cheque especial do banco 2 inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="limiteChequeDois" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator36" runat="server" ErrorMessage="* Valor do limite do cartão de crédito inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="limiteCartao" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator37" runat="server" ErrorMessage="* Valor do primeiro bem inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="valorBemUm" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <div>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator38" runat="server" ErrorMessage="* Valor do segundo bem inválido" CssClass="text-validacao"
+                                    Display="Dynamic" ControlToValidate="valorBemDois" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
+                            </div>
+                            <!-- Selects -->
+                            <div>
+                                <asp:RangeValidator ID="RangeValidator1" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
+                                    ErrorMessage="* Selecione uma opção válida para número de parcelas" ControlToValidate="numParcelas" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
+                            </div>
+                            <div>
+                                <asp:RangeValidator ID="RangeValidator2" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
+                                    ErrorMessage="* Selecione uma opção válida para tipo de documento" ControlToValidate="tipoDoc" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
+                            </div>
+                            <div>
+                                <asp:RangeValidator ID="RangeValidator3" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
+                                    ErrorMessage="* Selecione uma opção válida para UF de nascimento" ControlToValidate="ufNasc" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
+                            </div>
+                            <div>
+                                <asp:RangeValidator ID="RangeValidator4" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
+                                    ErrorMessage="* Selecione uma opção válida para estado civil" ControlToValidate="estadoCivil" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
+                            </div>
+                            <div>
+                                <asp:RangeValidator ID="RangeValidator5" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
+                                    ErrorMessage="* Selecione uma opção válida para escolaridade" ControlToValidate="escolaridade" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
+                            </div>
                         </div>
-                        <div class="clearfix"></div>
-                        <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
-                        <div id="message"></div>
                     </div>
                 </div>
             </div>

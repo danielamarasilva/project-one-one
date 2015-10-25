@@ -5,6 +5,9 @@
     <div class="main" role="main">
         <div id="content" class="content full">
             <div class="container">
+                <div class="clearfix"></div>
+                <div id="message"></div>
+                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
                 <!-- Vehicle Details -->
                 <article class="single-vehicle-details">
                     <div class="single-vehicle-title">
@@ -41,10 +44,12 @@
                                     <div class="vehicle-enquiry-in">
                                         <asp:TextBox ID="TxtName" runat="server" placeholder="Nome*" class="form-control"></asp:TextBox>&nbsp;
                                         <div class="row">
-                                            <div class="col-md-7">
-                                                <asp:TextBox ID="TxtPhone" runat="server" placeholder="Telefone*" class="form-control"></asp:TextBox>
-                                            </div>
                                             <div class="col-md-5">
+                                                <span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                                <asp:TextBox ID="TxtPhone" runat="server" placeholder="Telefone*" class="form-control" MaxLength="14"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <br />
                                                 <asp:TextBox ID="TxtEmail" runat="server" placeholder="Email*" class="form-control"></asp:TextBox>
                                             </div>
                                         </div>
@@ -52,6 +57,7 @@
                                             OnClick="BtnEnviar_Click" ValidationGroup="Enviar" />
                                     </div>
                                     <div>
+                                        <br />
                                         <div>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Informe o nome"
                                                 ControlToValidate="TxtName" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -64,6 +70,14 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Informe o email"
                                                 ControlToValidate="TxtEmail" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                                         </div>
+                                        <div>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Email inválido" CssClass="text-validacao"
+                                        Display="Dynamic" ControlToValidate="TxtEmail" ValidationGroup="Enviar" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                </div>
+                                <div>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Telefone inválido" CssClass="text-validacao"
+                                        Display="Dynamic" ControlToValidate="TxtPhone" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                                </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,9 +114,6 @@
                         </div>
                     </div>
                 </article>
-                <div class="clearfix"></div>
-                <div id="message"></div>
-                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
             </div>
         </div>
     </div>

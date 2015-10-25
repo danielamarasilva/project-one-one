@@ -25,6 +25,9 @@
     <div class="main" role="main">
         <div id="content" class="content full">
             <div class="container">
+                <div class="clearfix"></div>
+                <div id="message"></div>
+                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
                 <div class="listing-header margin-40">
                     <h2>Fale Conosco</h2>
                 </div>
@@ -59,7 +62,8 @@
                                         <input runat="server" type="text" id="email" name="email" class="form-control input-lg" placeholder="Email*">
                                     </div>
                                     <div class="form-group">
-                                        <input runat="server" type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Telefone*">
+                                        <span class="texto-regex-expl">Ex: (99)9999-9999</span>
+                                        <input runat="server" type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Telefone*" maxlength="14">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
@@ -87,11 +91,16 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Deixe sua mensagem"
                                         ControlToValidate="comments" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
+                                <div>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Email inválido" CssClass="text-validacao"
+                                        Display="Dynamic" ControlToValidate="email" ValidationGroup="Enviar" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                </div>
+                                <div>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Telefone inválido" CssClass="text-validacao"
+                                        Display="Dynamic" ControlToValidate="phone" ValidationGroup="Enviar" ValidationExpression="^\(\d{2}\)\d{4,5}-\d{4}$"></asp:RegularExpressionValidator>
+                                </div>
                             </div>
                         </form>
-                        <div class="clearfix"></div>
-                        <div id="message"></div>
-                        <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
                     </div>
                 </div>
             </div>

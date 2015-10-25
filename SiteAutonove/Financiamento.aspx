@@ -543,6 +543,8 @@
                                     ControlToValidate="nomeMae" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                         </div>
+                        <div class="clearfix"></div>
+                        <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
                         <div id="message"></div>
                     </div>
                 </div>

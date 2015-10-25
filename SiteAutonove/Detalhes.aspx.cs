@@ -106,11 +106,20 @@ namespace SiteAutonove
                 //Enviar email
                 MailSender mailSender = new MailSender();
                 mailSender.sendMail(this.TxtEmail.Text, bodyHtml, "Interesse em Veículo " + veiculo.Marca + " " + veiculo.Modelo);
+
+                this.BtnEnviar.Enabled = false;
+
+                this.LiteralMessage.Text = "<div class='alert alert-success'>" +
+	                                         "<h3>Obrigado pelo contato!</h3><br>" +
+	                                         "<p>Aguarde retorno de nossa equipe.</p>" +
+	                                         "</div>";
             }
             catch (Exception)
             {
-                
-                throw;
+                this.LiteralMessage.Text = "<div class='alert alert-error'>" +
+                                             "<h3>Não foi possível enviar seu contato!</h3><br>" +
+                                             "<p>Tente novamente mais tarde</p>" +
+                                             "</div>";
             }
         }
     }

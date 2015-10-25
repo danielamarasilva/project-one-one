@@ -101,6 +101,8 @@
                     </div>
                 </article>
                 <div class="clearfix"></div>
+                <div id="message"></div>
+                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
             </div>
         </div>
     </div>

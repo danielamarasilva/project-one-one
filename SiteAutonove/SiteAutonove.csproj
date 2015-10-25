@@ -80,7 +80,7 @@
     <Content Include="empresa.html" />
     <Content Include="Estoque.aspx" />
     <Content Include="Financiamento.aspx" />
-    <Content Include="financiamento1.html" />
+    <Content Include="financiamento.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\assets\ajax-loader.gif" />
     <Content Include="images\assets\error.gif" />

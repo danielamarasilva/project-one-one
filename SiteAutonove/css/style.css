@@ -5296,6 +5296,9 @@ body{
 	.grid-holder.col-2 .grid-item{
 		width:46%;
 	}
+    .grid-item{
+    height:500px;
+}
 	.grid-holder.col-3 .grid-item{
 		width:46%;
 	}

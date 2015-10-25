@@ -49,11 +49,11 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Valor da entrada: </span>" +
-                            "<span>Rthis. " + this.valorEntrada.Value + "</span>" +
+                            "<span> " + this.valorEntrada.Value + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Valor financiado: </span>" +
-                            "<span>Rthis. " + this.valorFinanciado.Value + "</span>" +
+                            "<span> " + this.valorFinanciado.Value + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Número de parcelas: </span>" +
@@ -365,10 +365,20 @@ namespace SiteAutonove
                 //Enviando Email
                 MailSender mailSender = new MailSender();
                 mailSender.sendMail(this.email.Value, bodyHtml, "Contato seção Financiamento");
+
+                this.BtnEnviar.Enabled = false;
+
+                this.LiteralMessage.Text = "<div class='alert alert-success'>" +
+                                             "<h3>Obrigado pelo contato!</h3><br>" +
+                                             "<p>Aguarde retorno de nossa equipe.</p>" +
+                                             "</div>";
             }
             catch (Exception)
             {
-                throw;
+                this.LiteralMessage.Text = "<div class='alert alert-error'>" +
+                                             "<h3>Não foi possível enviar seu contato!</h3><br>" +
+                                             "<p>Tente novamente mais tarde</p>" +
+                                             "</div>";
             }
             
         }

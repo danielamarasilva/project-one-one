@@ -18,7 +18,7 @@ namespace SiteAutonove
         {
             try
             {
-                if (this.autorizacao.Value == "")
+                if (this.autorizacao.Checked == false)
                 {
                     this.autorizacao.Value = "Não";
                 }
@@ -57,7 +57,7 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Número de parcelas: </span>" +
-                            "<span>" + this.numParcelas.Value + "</span>" +
+                            "<span>" + this.numParcelas.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Vencimento da parcela: </span>" +
@@ -86,7 +86,7 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Tipo de documento: </span>" +
-                            "<span>" + this.tipoDoc.Value + "</span>" +
+                            "<span>" + this.tipoDoc.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Número do documento: </span>" +
@@ -106,7 +106,7 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>UF de nascimento: </span>" +
-                            "<span>" + this.ufNasc.Value + "</span>" +
+                            "<span>" + this.ufNasc.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Cidade de nascimento: </span>" +
@@ -122,11 +122,11 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Estado civil: </span>" +
-                            "<span>" + this.estadoCivil.Value + "</span>" +
+                            "<span>" + this.estadoCivil.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Escolaridade: </span>" +
-                            "<span>" + this.escolaridade.Value + "</span>" +
+                            "<span>" + this.escolaridade.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Nome do pai: </span>" +
@@ -300,11 +300,11 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Tipo de cartão: </span>" +
-                            "<span>" + this.tipoCartao.Value + "</span>" +
+                            "<span>" + this.tipoCartao.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Operadora: </span>" +
-                            "<span>" + this.operadora.Value + "</span>" +
+                            "<span>" + this.operadora.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Observação: </span>" +
@@ -316,7 +316,7 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Já financiou outro veículo? </span>" +
-                            "<span>" + this.jaFinanciou.Value + "</span>" +
+                            "<span>" + this.jaFinanciou.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Financeira: </span>" +
@@ -324,12 +324,12 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Situação: </span>" +
-                            "<span>" + this.situacao.Value + "</span>" +
+                            "<span>" + this.situacao.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<h2 style='font-size:1.5em;'>Lista de Bens</h2><hr>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Tipo de bem: </span>" +
-                            "<span>" + this.tipoBemUm.Value + "</span>" +
+                            "<span>" + this.tipoBemUm.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Descrição do bem: </span>" +
@@ -341,7 +341,7 @@ namespace SiteAutonove
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Tipo do bem: </span>" +
-                            "<span>" + this.tipoBemDois.Value + "</span>" +
+                            "<span>" + this.tipoBemDois.SelectedItem.Text + "</span>" +
                         "</p>" +
                         "<p>" +
                             "<span style='font-weight:bold;'>Descrição do bem: </span>" +
@@ -369,7 +369,7 @@ namespace SiteAutonove
                 this.BtnEnviar.Enabled = false;
 
                 this.LiteralMessage.Text = "<div class='alert alert-success'>" +
-                                             "<h3>Obrigado pelo contato!</h3><br>" +
+                                             "<h3>Obrigado pelo contato " + this.nome.Value + "!</h3><br>" +
                                              "<p>Aguarde retorno de nossa equipe.</p>" +
                                              "</div>";
             }
@@ -380,7 +380,6 @@ namespace SiteAutonove
                                              "<p>Tente novamente mais tarde</p>" +
                                              "</div>";
             }
-            
         }
     }
 }

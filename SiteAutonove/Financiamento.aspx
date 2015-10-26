@@ -67,18 +67,18 @@
                                     </div>
                                     <div class="form-group">
                                         Número de Parcelas: <span class="required-itens">*</span>
-                                        <select runat="server" id="numParcelas" name="numParcelas" class="form-control input-lg">
-                                            <option value="0">Escolha</option>
-                                            <option value="6 meses">6 meses</option>
-                                            <option value="12 meses">12 meses</option>
-                                            <option value="18 meses">18 meses</option>
-                                            <option value="24 meses">24 meses</option>
-                                            <option value="30 meses">30 meses</option>
-                                            <option value="36 meses">36 meses</option>
-                                            <option value="48 meses">48 meses</option>
-                                            <option value="60 meses">60 meses</option>
-                                            <option value="72 meses">72 meses</option>
-                                        </select>
+                                        <asp:DropDownList ID="numParcelas" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text="">Escolha</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="6 meses">6 meses</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="12 meses">12 meses</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="18 meses">18 meses</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="24 meses">24 meses</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="30 meses">30 meses</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="36 meses">36 meses</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="48 meses">48 meses</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="60 meses">60 meses</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="72 meses">72 meses</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Vencto 1 Parcela: <span class="required-itens">*</span><span class="texto-regex-expl">Ex: 01/01/1900</span>
@@ -108,13 +108,13 @@
                                     </div>
                                     <div class="form-group">
                                         Tipo de documento <span class="required-itens">*</span>
-                                        <select runat="server" id="tipoDoc" name="TipoDoc" class="form-control input-lg">
-                                            <option value="0">Escolha</option>
-                                            <option value="rg">RG</option>
-                                            <option value="rne">RNE</option>
-                                            <option value="cnh">CNH</option>
-                                            <option value="ric">RIC</option>
-                                        </select>
+                                        <asp:DropDownList ID="tipoDoc" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text="">Escolha</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="RG">RG</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="RNE">RNE</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="CNH">CNH</asp:ListItem>
+                                            <asp:ListItem Value="4" Text="RIC">RIC</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Número do documento: <span class="required-itens">*</span>
@@ -134,36 +134,36 @@
                                     </div>
                                     <div class="form-group">
                                         UF de nascimento: <span class="required-itens">*</span>
-                                        <select runat="server" id="ufNasc" name="ufNasc" class="form-control input-lg">
-                                            <option value="0">Escolha</option>
-                                            <option value="AC">AC</option>
-                                            <option value="AL">AL</option>
-                                            <option value="AP">AP</option>
-                                            <option value="AM">AM</option>
-                                            <option value="BA">BA</option>
-                                            <option value="CE">CE</option>
-                                            <option value="DF">DF</option>
-                                            <option value="ES">ES</option>
-                                            <option value="GO">GO</option>
-                                            <option value="MA">MA</option>
-                                            <option value="MT">MT</option>
-                                            <option value="MS">MS</option>
-                                            <option value="MG">MG</option>
-                                            <option value="PA">PA</option>
-                                            <option value="PB">PB</option>
-                                            <option value="PR">PR</option>
-                                            <option value="PE">PE</option>
-                                            <option value="PI">PI</option>
-                                            <option value="RJ">RJ</option>
-                                            <option value="RN">RN</option>
-                                            <option value="RS">RS</option>
-                                            <option value="RO">RO</option>
-                                            <option value="RR">RR</option>
-                                            <option value="SC">SC</option>
-                                            <option value="SP">SP</option>
-                                            <option value="SE">SE</option>
-                                            <option value="TO">TO</option>
-                                        </select>
+                                        <asp:DropDownList ID="ufNasc" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text="">Escolha</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="AC">AC</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="AL">AL</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="AP">AP</asp:ListItem>
+                                            <asp:ListItem Value="4" Text="AM">AM</asp:ListItem>
+                                            <asp:ListItem Value="5" Text="BA">BA</asp:ListItem>
+                                            <asp:ListItem Value="6" Text="CE">CE</asp:ListItem>
+                                            <asp:ListItem Value="7" Text="DF">DF</asp:ListItem>
+                                            <asp:ListItem Value="8" Text="ES">ES</asp:ListItem>
+                                            <asp:ListItem Value="9" Text="GO">GO</asp:ListItem>
+                                            <asp:ListItem Value="10" Text="MA">MA</asp:ListItem>
+                                            <asp:ListItem Value="11" Text="MT">MT</asp:ListItem>
+                                            <asp:ListItem Value="12" Text="MS">MS</asp:ListItem>
+                                            <asp:ListItem Value="13" Text="MG">MG</asp:ListItem>
+                                            <asp:ListItem Value="14" Text="PA">PA</asp:ListItem>
+                                            <asp:ListItem Value="15" Text="PB">PB</asp:ListItem>
+                                            <asp:ListItem Value="16" Text="PR">PR</asp:ListItem>
+                                            <asp:ListItem Value="17" Text="PE">PE</asp:ListItem>
+                                            <asp:ListItem Value="18" Text="PI">PI</asp:ListItem>
+                                            <asp:ListItem Value="19" Text="RJ">RJ</asp:ListItem>
+                                            <asp:ListItem Value="20" Text="RN">RN</asp:ListItem>
+                                            <asp:ListItem Value="21" Text="RS">RS</asp:ListItem>
+                                            <asp:ListItem Value="22" Text="RO">RO</asp:ListItem>
+                                            <asp:ListItem Value="23" Text="RR">RR</asp:ListItem>
+                                            <asp:ListItem Value="24" Text="SC">SC</asp:ListItem>
+                                            <asp:ListItem Value="25" Text="SP">SP</asp:ListItem>
+                                            <asp:ListItem Value="26" Text="SE">SE</asp:ListItem>
+                                            <asp:ListItem Value="27" Text="TO">TO</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Cidade de nascimento: <span class="required-itens">*</span>
@@ -182,24 +182,24 @@
                                     </div>
                                     <div class="form-group">
                                         Estado civil: <span class="required-itens">*</span>
-                                        <select runat="server" id="estadoCivil" name="estadoCivil" class="form-control input-lg">
-                                            <option value="0">Escolha</option>
-                                            <option value="Solteiro(a)">Solteiro(a)</option>
-                                            <option value="Casado(a)">Casado(a)</option>
-                                            <option value="União Estavel">União Estável</option>
-                                            <option value="Divorciado(a)">Divorciado(a)</option>
-                                            <option value="Viúvo(a)">Viúvo(a)</option>
-                                        </select>
+                                        <asp:DropDownList ID="estadoCivil" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text="">Escolha</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Solteiro(a)">Solteiro(a)</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Casado(a)">Casado(a)</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="União Estável">União Estável</asp:ListItem>
+                                            <asp:ListItem Value="4" Text="Divorciado(a)">Divorciad(a)</asp:ListItem>
+                                            <asp:ListItem Value="5" Text="Viúvo(a)">Viúvo(a)</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Escolaridade: <span class="required-itens">*</span>
-                                        <select runat="server" id="escolaridade" name="escolaridade" class="form-control input-lg">
-                                            <option value="0">Escolha</option>
-                                            <option value="Primeiro Grau">Primeiro Grau</option>
-                                            <option value="Segundo Grau">Segundo Grau</option>
-                                            <option value="Superior">Superior</option>
-                                            <option value="Pós Graduação">Pós Graduação</option>
-                                        </select>
+                                        <asp:DropDownList ID="escolaridade" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text="">Escolha</asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Primeiro Grau">Primeiro Grau</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Segundo Grau">Segundo Grau</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="Superior">Superior</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="Pós Graduação">Pós Graduação</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Nome do Pai: <span class="required-itens">*</span>
@@ -301,7 +301,7 @@
                                     </div>
                                     <div class="form-group">
                                         Telefone:<span class="texto-regex-expl">Ex: (99)9999-9999</span>
-                                        <input runat="server" type="text" id="telefoneEmp" name="telefoneEmp" class="form-control input-lg" maxlength="13" />
+                                        <input runat="server" type="text" id="telefoneEmp" name="telefoneEmp" class="form-control input-lg" maxlength="14" />
                                     </div>
                                     <div class="form-group">
                                         Ramal:
@@ -313,7 +313,7 @@
                                     </div>
                                     <div class="form-group">
                                         Telefone:<span class="texto-regex-expl">Ex: (99)9999-9999</span>
-                                        <input runat="server" type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" class="form-control input-lg" maxlength="11" />
+                                        <input runat="server" type="text" id="telefoneEmpAnterior" name="telefoneEmpAnterior" class="form-control input-lg" maxlength="14" />
                                     </div>
                                     <div class="form-group">
                                         Tempo de empresa:
@@ -375,23 +375,23 @@
                                     </div>
                                     <div class="form-group">
                                         Tipo de cartão:
-                                            <select runat="server" id="tipoCartao" name="tipoCartao" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Nacional">Nacional</option>
-                                                <option value="Internacional">Internacional</option>
-                                            </select>
+                                        <asp:DropDownList ID="tipoCartao" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Nacional">Nacional</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Internacional">Internacional</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Operadora:
-                                            <select runat="server" id="operadora" name="operadora" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Visa">Visa</option>
-                                                <option value="MasterCard">MasterCard</option>
-                                                <option value="Gold">Gold</option>
-                                                <option value="Diners">Diners</option>
-                                                <option value="Amex">Amex</option>
-                                                <option value="Outros">Outros</option>
-                                            </select>
+                                        <asp:DropDownList ID="operadora" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Visa">Visa</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="MasterCard">MasterCard</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="Gold">Gold</asp:ListItem>
+                                            <asp:ListItem Value="4" Text="Diners">Diners</asp:ListItem>
+                                            <asp:ListItem Value="5" Text="Amex">Amex</asp:ListItem>
+                                            <asp:ListItem Value="6" Text="Outros">Outros</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Observação:
@@ -403,34 +403,34 @@
                                     </div>
                                     <div class="form-group">
                                         Já financiou outro veículo?
-                                            <select runat="server" id="jaFinanciou" name="jaFinanciou" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Sim">Sim</option>
-                                                <option value="Não">Não</option>
-                                            </select>
+                                        <asp:DropDownList ID="jaFinanciou" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Sim">Sim</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Não">Não</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Financeira:
                                             <input runat="server" type="text" id="financeira" name="financeira" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Situação
-                                            <select runat="server" id="situacao" name="situacao" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Em Andamento">Em Andamento</option>
-                                                <option value="Quitado">Quitado</option>
-                                            </select>
+                                        Situação: 
+                                        <asp:DropDownList ID="situacao" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Em Andamento">Em Andamento</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Quitado">Quitado</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <h4>Lista de Bens</h4>
                                     <hr />
                                     <div class="form-group">
-                                        Tipo de Bem 01
-                                            <select runat="server" id="tipoBemUm" name="tipoBemUm" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Imóvel">Imóvel</option>
-                                                <option value="Veículo">Veículo</option>
-                                                <option value="Outros">Outros</option>
-                                            </select>
+                                        Tipo de Bem 01: 
+                                        <asp:DropDownList ID="tipoBemUm" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Imóvel">Imóvel</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Veículo">Veículo</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="Outros">Outros</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Descrição/Modelo:
@@ -441,13 +441,13 @@
                                         <input runat="server" type="text" id="valorBemUm" name="valorBemUm" class="form-control input-lg" />
                                     </div>
                                     <div class="form-group">
-                                        Tipo de Bem 02
-                                            <select runat="server" id="tipoBemDois" name="tipoBemDois" class="form-control input-lg">
-                                                <option value="0">Escolha</option>
-                                                <option value="Imóvel">Imóvel</option>
-                                                <option value="Veículo">Veículo</option>
-                                                <option value="Outros">Outros</option>
-                                            </select>
+                                        Tipo de Bem 02: 
+                                        <asp:DropDownList ID="tipoBemDois" runat="server" CssClass="form-control input-lg">
+                                            <asp:ListItem Value="0" Text=""></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Imóvel">Imóvel</asp:ListItem>
+                                            <asp:ListItem Value="2" Text="Veículo">Veículo</asp:ListItem>
+                                            <asp:ListItem Value="3" Text="Outros">Outros</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         Descrição/Modelo:
@@ -473,7 +473,7 @@
                         <div class="clearfix"></div>
                         <div>
                             <!-- Itens obrigatórios -->
-                            <%--<div>
+                            <div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*  Informe o veículo"
                                     ControlToValidate="veiculo" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
@@ -528,8 +528,8 @@
                             <div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="*  Informe data de nascimento"
                                     ControlToValidate="dataNasc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
-                            </div>--%>
-                            <%--<div>
+                            </div>
+                            <div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*  Informe a cidade de nascimento"
                                     ControlToValidate="cidadeNasc" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
@@ -542,13 +542,13 @@
                                     ControlToValidate="nomePai" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="*  Informe o nome da mãe"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator40" runat="server" ErrorMessage="*  Informe o nome da mãe"
                                     ControlToValidate="nomeMae" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="*  Informe o sexo"
                                     ControlToValidate="sexo" ValidationGroup="Enviar" CssClass="text-validacao" Display="Dynamic"></asp:RequiredFieldValidator>
-                            </div>--%>
+                            </div>
                             <!-- Expressões regulares -->
                             <div>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Email inválido" CssClass="text-validacao"
@@ -670,7 +670,7 @@
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator38" runat="server" ErrorMessage="* Valor do segundo bem inválido" CssClass="text-validacao"
                                     Display="Dynamic" ControlToValidate="valorBemDois" ValidationGroup="Enviar" ValidationExpression="^[1-9]\d*(,\d+)?$"></asp:RegularExpressionValidator>
                             </div>
-                            <!-- Selects -->
+                            <!-- Selects Obrigatórios-->
                             <div>
                                 <asp:RangeValidator ID="RangeValidator1" runat="server" CssClass="text-validacao" Display="Dynamic" ValidationGroup="Enviar"
                                     ErrorMessage="* Selecione uma opção válida para número de parcelas" ControlToValidate="numParcelas" MinimumValue="1" MaximumValue="99999999999"></asp:RangeValidator>
